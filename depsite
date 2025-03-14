@@ -15,5 +15,51 @@ pay_md5sign = strtoupper(md5($str));
 
 2. depsite 
 
+endpoint :   https://payin.pro/Pay_Index.html
+post method : form-data
+
+cURL code:
+
+curl --location 'https://payin.pro/Pay_Index.html' \
+--form 'pay_memberid="240602495"' \
+--form 'pay_orderid="SN2024060617020001"' \
+--form 'pay_applydate="2024-06-06 17:02:36"' \
+--form 'pay_bankcode="979"' \
+--form 'pay_notifyurl="https://api.megadreamlottery.com/notifyurl.html"' \   //this url is callback for paid success
+--form 'pay_callbackurl="https://api.megadreamlottery.com/success.html"' \  //this url for jump URL
+--form 'pay_amount="200.00"' \
+--form 'pay_md5sign="6819ACDEEAF53D395279F0AEE611425A"' \
+--form 'pay_productname="vipbuy"'   // pay_productname do not join in the md5 string
+
+[pay_productname do not join in the md5 string]
+
+Response:
+
+{"status":"fail","msg":"system error!"}
+
+{"status":"success","pay_url":"https://upi.inrs.com/ptm?no=2757539238122622976"}
+
+if success, pay_url  is the checkout page URL
+
+
+3. deposit notification/callback:
+
+after success paid,  a notification will send by   post 【x-www-form-urlencoded】   to 【pay_notifyurl】
+
+example：
+
+memberid=250058914&orderid=9420250314081337436&transaction_id=20220314081337575449&amount=1750.0000&datetime=20220314081352&returncode=00&sign=D01B4350781109F9A3BB45034425D0DD&attach=
+
+returncode=00  means this Merchants【250058914】 orderid 【9420250314081337436】which amount 【1750.0000】 has been paid successfully
+
+only the customer paid full amount, the notification will happen.  
+Unpaid, Partial paid， no notification send.
+
+
+
+
+
+
+
 
 
