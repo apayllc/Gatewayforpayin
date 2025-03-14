@@ -56,6 +56,8 @@ attach whatever null or not, do not join in md5 string
 only the customer paid full amount, the notification will happen.  
 Unpaid, Partial paid， no notification send.
 
+[After you received the notification/callback, you must response 【 OK 】 to Us //uppercase OK]
+
 
 4. Withdrawal submit
 
@@ -75,9 +77,15 @@ curl --location 'https://payin.pro/Payment_Dfpay_add.html' \
 --form 'city="India"' \                     //Not empty
 --form 'pay_md5sign="IDG233ADAGHJSGSWAXS"'
 
+Response：
 
+{"status":"error","msg":'Ifsc should be of 11 characters and 5th character should be 0！',"data":null}
 
+{"status":"success","msg":"success","transaction_id":"202202012563232","out_trade_no":"client202202012563232"}
 
+//status = success & msg = success just means the payouts order submit to us successfully, not all business finished!
+
+5. 
 
 
 
