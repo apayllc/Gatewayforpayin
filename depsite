@@ -19,7 +19,7 @@ endpoint :   https://payin.pro/Pay_Index.html
 post method : form-data
 
 cURL code:
-
+'''php
 curl --location 'https://payin.pro/Pay_Index.html' \
 --form 'pay_memberid="240602495"' \
 --form 'pay_orderid="SN2024060617020001"' \
