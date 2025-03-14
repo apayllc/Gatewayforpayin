@@ -131,3 +131,20 @@ refCode =2 // payouts failed
 refCode =3 // pending
 
 
+7. Balance query
+
+endpoint： https://payin.pro/Payment_Dfpay_balance.html
+post method : form-data
+
+cURL code:
+
+curl --location 'https://inrpay.info/Payment_Dfpay_query.html' \
+--header 'Cookie: PHPSESSID=3qahcu7f5abn60t929cqcne25h' \
+ 
+--form 'mchid="2135542112"' \
+--form 'pay_md5sign="IDG233ADAGHJSGSWAXS"'
+
+Response：
+
+{"status":"success","msg":"success","mchid":"110443290","balance":"16378.0000","blockedbalance":"1055267.6000", "dfbalance":"54173.4600","sign":"EE432D6475F5619DBC786D5A28432628"}
+
