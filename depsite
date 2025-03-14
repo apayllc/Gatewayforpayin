@@ -51,10 +51,29 @@ example：
 memberid=250058914&orderid=9420250314081337436&transaction_id=20220314081337575449&amount=1750.0000&datetime=20220314081352&returncode=00&sign=D01B4350781109F9A3BB45034425D0DD&attach=
 
 returncode=00  means this Merchants【250058914】 orderid 【9420250314081337436】which amount 【1750.0000】 has been paid successfully
+attach whatever null or not, do not join in md5 string
 
 only the customer paid full amount, the notification will happen.  
 Unpaid, Partial paid， no notification send.
 
+
+4. Withdrawal submit
+
+endpoint:  https://payin.pro/Payment_Dfpay_add.html
+post method : form-data
+
+cURL code:
+curl --location 'https://payin.pro/Payment_Dfpay_add.html' \
+--form 'mchid="241047011"' \
+--form 'out_trade_no="payoutsorderid20241101001"' \
+--form 'money="100.00"' \
+--form 'bankname="inrbank"' \                     // just Not empty
+--form 'subbranch="https://api-dev.topx.one/api/v1/payment/payouts/"' \   //this is your callback URL for receive notification of Withdrawal result 
+--form 'accountname="sams Linux"' \
+--form 'cardnumber="01101101101100"' \
+--form 'province="BDBL0002681"' \                     // this is IFScode
+--form 'city="India"' \                     //Not empty
+--form 'pay_md5sign="IDG233ADAGHJSGSWAXS"'
 
 
 
