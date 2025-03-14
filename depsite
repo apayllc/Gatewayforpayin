@@ -1,2 +1,19 @@
-for md5
-  
+1. for MD5 calculation method
+
+Use ASCII increasing order to rank all parameters （if the parameter which value is null， do not join in String）
+URL encode
+Splice key=apikey   at the end of string
+Use the md5 calculation method and convert the result to uppercase
+
+/////////////////////
+example：
+$str = $K1=V1&$K2=V2&$K3=V3&$K4=V4&$K5=V5&$K6=V6&key=apikey;
+pay_md5sign = strtoupper(md5($str));
+
+/////////////////////
+
+
+2. depsite 
+
+
+
