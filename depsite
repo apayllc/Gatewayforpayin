@@ -15,12 +15,12 @@ pay_md5sign = strtoupper(md5($str));
 
 2. depsite 
 
-endpoint :   https://payin.pro/Pay_Index.html
+endpoint :   https://inrpay.info/Pay_Index.html
 post method : form-data
 
 cURL code:
 
-curl --location 'https://payin.pro/Pay_Index.html' \
+curl --location 'https://inrpay.info/Pay_Index.html' \
 --form 'pay_memberid="240602495"' \
 --form 'pay_orderid="SN2024060617020001"' \
 --form 'pay_applydate="2024-06-06 17:02:36"' \
@@ -61,11 +61,11 @@ Unpaid, Partial paid， no notification send.
 
 4. Withdrawal submit
 
-endpoint:  https://payin.pro/Payment_Dfpay_add.html
+endpoint:  https://inrpay.info/Payment_Dfpay_add.html
 post method : form-data
 
 cURL code:
-curl --location 'https://payin.pro/Payment_Dfpay_add.html' \
+curl --location 'https://inrpay.info/Payment_Dfpay_add.html' \
 --form 'mchid="241047011"' \
 --form 'out_trade_no="payoutsorderid20241101001"' \
 --form 'money="100.00"' \
@@ -105,7 +105,7 @@ remarks is UTR number if status = processed
 
 6. payouts query
 
-endpoint： https://payin.pro/Payment_Dfpay_query.html
+endpoint： https://inrpay.info/Payment_Dfpay_query.html
 post method : form-data
 
 cURL code:
@@ -133,7 +133,7 @@ refCode =3 // pending
 
 7. Balance query
 
-endpoint： https://payin.pro/Payment_Dfpay_balance.html
+endpoint： https://inrpay.info/Payment_Dfpay_balance.html
 post method : form-data
 
 cURL code:
